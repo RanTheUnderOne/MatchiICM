@@ -20,8 +20,7 @@ MatchiICM/
 │   ├── mcp_crm_run.py          MCP → CRM rules → MCP adapter
 │   ├── mcp_brochure_run.py     MCP → brochure → PDF adapter
 │   ├── mcp_facebook_scan_run.py Apify → extract → MCP adapter
-│   ├── icm_pipeline.py         Master orchestrator
-│   └── cold_test.py            Structure verification
+│   └── icm_pipeline.py         Master orchestrator
 ├── _config/            ← Stable rules (read-only)
 │   ├── voice.md                Brand voice + tone
 │   ├── cma-rules.md            CMA formulas + comp selection
