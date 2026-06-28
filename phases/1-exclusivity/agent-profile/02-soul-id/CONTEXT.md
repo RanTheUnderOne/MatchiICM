@@ -4,7 +4,7 @@ Collect reference photos for consistent agent portraits. No training needed —
 OpenAI prompt consistency replaces Soul ID.
 
 ## Execution Layer
-Human → OpenAI `generate_image` (DALL-E 3).
+Human → OpenAI `generate_image` (GPT Image 1).
 
 ## Inputs
 - `01-intake/output/agent.json` (photo_refs, name, brand)

@@ -12,7 +12,7 @@ OpenAI — `https://api.openai.com/v1/images/generations` with `$OPENAI_API_KEY`
 ## Process
 1. Build prompt: `face-descriptor` + "professional real-estate headshot,
    clean neutral background, soft professional lighting, business attire".
-2. Call OpenAI `generate_image` (DALL-E 3, 1024x1024, HD quality).
+2. Call OpenAI `generate_image` (GPT Image 1, 1024x1024, HD quality).
 3. Save returned image(s) to `output/`.
 4. On failure: fallback to placeholder, set `fallback: true`.
 
@@ -28,4 +28,4 @@ Show portrait(s). Agent picks/approves before the card is assembled.
 ## Pitfalls
 | Background clashes with brand | Use `_config/voice.md` palette in prompt |
 | Face drift between portraits | Always include full face-descriptor as prompt prefix |
-| API rate limit | DALL-E 3: 1 image/sec. Batch sequentially |
+| API rate limit | GPT Image 1: 1 image/sec. Batch sequentially |
