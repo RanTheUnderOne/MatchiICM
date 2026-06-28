@@ -1,0 +1,8 @@
+{
+  "_note": "MOCK crm-update transition requests. Real later: comes from chat intent (Hermes parses 'שנה סטטוס ליד X ל-Y'). Swap when crm-update proven.",
+  "transitions": [
+    { "lead_id": "L-1", "to": "contacted" },
+    { "lead_id": "L-2", "to": "qualified" },
+    { "lead_id": "L-4", "to": "won" }
+  ]
+}

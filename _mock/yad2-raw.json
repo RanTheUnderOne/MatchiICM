@@ -1,0 +1,38 @@
+{
+  "_comment": "MOCK raw Yad2 scrape output (messy/inconsistent on purpose). Replaces Yad2 scraper. Swap when yad2-import proven.",
+  "listings": [
+    {
+      "yad2_id": "y-88231",
+      "raw_title": "4 חד' הרצל חיפה משופצת!! כניסה מיידית",
+      "raw_price": "1,450,000 ₪",
+      "raw_rooms": "4",
+      "raw_size": "95 מ\"ר",
+      "raw_floor": "קומה 3 מתוך 5",
+      "raw_location": "הרצל, הדר, חיפה",
+      "raw_features": "מרפסת, מעלית, משופצת",
+      "phone": "050-1112233"
+    },
+    {
+      "yad2_id": "y-88410",
+      "raw_title": "להשכרה 2 חדרים נווה שאנן",
+      "raw_price": "3900 שח לחודש",
+      "raw_rooms": "2",
+      "raw_size": "",
+      "raw_floor": "קרקע",
+      "raw_location": "נווה שאנן חיפה",
+      "raw_features": "ריהוט חלקי, חניה",
+      "phone": "052-9988776"
+    },
+    {
+      "yad2_id": "y-88555",
+      "raw_title": "פנטהאוז כרמל נוף לים 5 חדרים",
+      "raw_price": "2.75 מיליון",
+      "raw_rooms": "5",
+      "raw_size": "140",
+      "raw_floor": "8/8",
+      "raw_location": "מוריה כרמל חיפה",
+      "raw_features": "מרפסת גג, חניה כפולה, מעלית",
+      "phone": "054-3344556"
+    }
+  ]
+}

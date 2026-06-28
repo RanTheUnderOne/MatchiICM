@@ -1,0 +1,19 @@
+{
+  "_comment": "MOCK agent profile input. Replaces onboarding questionnaire / Supabase agents. Swap when agent-profile proven.",
+  "agent": {
+    "id": "A-01",
+    "full_name": "דנה לוי",
+    "title": "סוכנת נדל\"ן בכירה",
+    "agency": "לוי נכסים",
+    "areas": ["חיפה", "הקריות", "נשר"],
+    "specialty": "דירות מגורים, בלעדיות",
+    "years_experience": 8,
+    "phone": "050-1234567",
+    "email": "dana@levi-nadlan.co.il",
+    "languages": ["עברית", "רוסית", "אנגלית"],
+    "tagline": "מוכרת נכסים עם נתונים, לא הבטחות",
+    "license": "מתווך 12345",
+    "soul_id": "mock-soul-dana-abc123",
+    "photo_refs": ["mock://agent-photos/dana-1.jpg", "mock://agent-photos/dana-2.jpg"]
+  }
+}

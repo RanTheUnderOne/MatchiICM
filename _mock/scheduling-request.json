@@ -1,0 +1,10 @@
+{
+  "_note": "MOCK scheduling request (replaces chat intent). Real later: Hermes parses 'קבע צפייה עם L-1 על P-1001'. Swap when scheduling proven.",
+  "lead_id": "L-1",
+  "property_id": "P-1001",
+  "window": {
+    "start": "2026-06-28T09:00:00+03:00",
+    "end": "2026-06-28T13:00:00+03:00"
+  },
+  "duration_min": 30
+}

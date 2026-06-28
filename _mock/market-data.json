@@ -1,0 +1,33 @@
+{
+  "_comment": "MOCK market comparables for CMA. Replaces real market data feed (Yad2 sold/active, gov data). Swap when cma proven.",
+  "comparables": [
+    {
+      "id": "C-201", "neighborhood": "הדר", "city": "חיפה", "rooms": 4,
+      "size_sqm": 90, "floor": 2, "status": "sold", "sold_price": 1380000,
+      "sold_date": "2026-04-10", "days_on_market": 34
+    },
+    {
+      "id": "C-202", "neighborhood": "הדר", "city": "חיפה", "rooms": 4,
+      "size_sqm": 100, "floor": 4, "status": "sold", "sold_price": 1510000,
+      "sold_date": "2026-05-02", "days_on_market": 28
+    },
+    {
+      "id": "C-203", "neighborhood": "הדר", "city": "חיפה", "rooms": 4,
+      "size_sqm": 88, "floor": 1, "status": "active", "asking_price": 1399000,
+      "days_on_market": 60
+    },
+    {
+      "id": "C-204", "neighborhood": "הדר", "city": "חיפה", "rooms": 3.5,
+      "size_sqm": 82, "floor": 3, "status": "sold", "sold_price": 1250000,
+      "sold_date": "2026-03-22", "days_on_market": 19
+    },
+    {
+      "id": "C-205", "neighborhood": "הדר", "city": "חיפה", "rooms": 4,
+      "size_sqm": 96, "floor": 3, "status": "active", "asking_price": 1475000,
+      "days_on_market": 15
+    }
+  ],
+  "neighborhood_stats": {
+    "הדר": { "avg_price_per_sqm": 15200, "avg_days_on_market": 31, "trend_3mo": "+1.8%" }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "_note": "MOCK lead inventory for scoring/matching/crm. Real later: Supabase leads table / platform MCP. Same shape.",
+  "leads": [
+    { "id": "L-1", "name": "יוסי כהן",  "phone": "+972500000001", "intent": "buy",  "rooms": 3, "city": "חיפה",  "neighborhood": "הדר",   "budget": 1600000, "timeline": "0-3mo", "source": "facebook", "last_contact": "2026-06-25", "stage": "new" },
+    { "id": "L-2", "name": "Maya L.",   "phone": "+972500000002", "intent": "rent", "rooms": 2, "city": "חיפה",  "neighborhood": "נמל",   "budget": 4500,    "timeline": "0-1mo", "source": "facebook", "last_contact": "2026-06-25", "stage": "new" },
+    { "id": "L-3", "name": "רונית ב.",  "phone": "+972500000003", "intent": "buy",  "rooms": 4, "city": "חדרה",  "neighborhood": "מרכז",  "budget": 2100000, "timeline": "3-6mo", "source": "facebook", "last_contact": "2026-06-25", "stage": "contacted" },
+    { "id": "L-4", "name": "דנה אבני",  "phone": "+972500000004", "intent": "buy",  "rooms": 3, "city": "חיפה",  "neighborhood": "הדר",   "budget": 1500000, "timeline": "0-3mo", "source": "website",  "last_contact": "2026-06-20", "stage": "qualified" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_note": "MOCK calendar/showings for scheduling + reminders. Real later: Google Calendar MCP. Same shape. agent_id normalized to A-01 everywhere.",
+  "agent_id": "A-01",
+  "busy": [
+    { "start": "2026-06-28T10:00:00+03:00", "end": "2026-06-28T11:00:00+03:00", "title": "פגישת בלעדיות הרצל 12" }
+  ],
+  "showings": [
+    {
+      "id": "S-1",
+      "property_id": "P-1001",
+      "lead_id": "L-1",
+      "lead_name": "יוסי כהן",
+      "lead_phone": "+972500000001",
+      "start": "2026-06-28T09:00:00+03:00",
+      "end": "2026-06-28T09:30:00+03:00",
+      "status": "confirmed",
+      "reminder_sent": false
+    }
+  ]
+}

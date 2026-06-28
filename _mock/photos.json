@@ -1,0 +1,12 @@
+{
+  "_note": "MOCK source photos for photo-enhance. Real later: agent upload / property-page gallery / Supabase storage.",
+  "property_id": "P-1001",
+  "photos": [
+    { "id": "ph-1", "room": "living",   "path": "mock://photos/p1001-living.jpg",   "issues": ["cluttered", "old sofa"] },
+    { "id": "ph-2", "room": "kitchen",  "path": "mock://photos/p1001-kitchen.jpg",  "issues": ["dim lighting", "cluttered counter"] },
+    { "id": "ph-3", "room": "bedroom",  "path": "mock://photos/p1001-bedroom.jpg",  "issues": ["unmade bed", "personal items"] },
+    { "id": "ph-4", "room": "empty",    "path": "mock://photos/p1001-empty.jpg",    "issues": ["bare room, needs staging"] },
+    { "id": "ph-5", "room": "exterior", "path": "mock://photos/p1001-exterior.jpg", "issues": [] },
+    { "id": "ph-6", "room": "balcony",  "path": "mock://photos/p1001-balcony.jpg",  "issues": ["cluttered with chairs"] }
+  ]
+}
