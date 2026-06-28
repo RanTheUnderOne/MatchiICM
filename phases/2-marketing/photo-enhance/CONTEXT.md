@@ -10,8 +10,8 @@ relight, stage empty rooms only.
 | Stage | Action | Execution |
 | --- | --- | --- |
 | 01-intake | Collect source photos + flag issues | MCP `get_property_full_details` + `_mock/photos.json` fallback |
-| 02-declutter | Remove clutter / background / personal items | OpenAI `generate_image` (GPT Image 1 edit mode) |
-| 03-stage | Virtually furnish empty rooms in brand style | OpenAI `generate_image` (GPT Image 1) |
+| 02-declutter | Remove clutter / background / personal items | OpenAI `generate_image` (GPT Image 2 edit mode) |
+| 03-stage | Virtually furnish empty rooms in brand style | OpenAI `generate_image` (GPT Image 2) |
 | 04-approve | Human gate → publishable set | Human gate |
 
 ## Environment

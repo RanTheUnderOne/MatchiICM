@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Quick test — OpenAI GPT Image 1 generation."""
+"""Quick test — OpenAI GPT Image 2 generation."""
 import urllib.request, json, os, sys, time, base64
 
 API_KEY = os.environ.get("OPENAI_API_KEY", "")
@@ -9,7 +9,7 @@ if not API_KEY:
 
 def generate(prompt, output_name):
     payload = json.dumps({
-        "model": "gpt-image-1",
+        "model": "gpt-image-2",
         "prompt": prompt,
         "n": 1,
         "size": "1024x1024",
@@ -31,7 +31,7 @@ def generate(prompt, output_name):
     if "data" in r:
         data = r["data"][0]
         os.makedirs("_test_output", exist_ok=True)
-        # gpt-image-1 returns b64_json by default
+        # gpt-image-2 returns b64_json by default
         if data.get("b64_json"):
             img_bytes = base64.b64decode(data["b64_json"])
             path = f"_test_output/{output_name}.png"

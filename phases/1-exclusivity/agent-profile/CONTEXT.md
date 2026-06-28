@@ -10,7 +10,7 @@ face descriptor as prompt prefix, reused across all stages. No training needed.
 | --- | --- | --- | --- |
 | 01-intake | Collect agent details | Human | Onboarding questionnaire / local config |
 | 02-face-id | Extract face descriptor from photos | LLM | Analyze photos → consistent text descriptor |
-| 03-portrait | Generate professional portrait(s) | OpenAI | `generate_image` (GPT Image 1) with face descriptor |
+| 03-portrait | Generate professional portrait(s) | OpenAI | `generate_image` (GPT Image 2) with face descriptor |
 | 04-profile-card | Assemble branded card | LLM | OpenAI + `_config/voice.md` |
 | 05-approve | Human gate | Human | — |
 

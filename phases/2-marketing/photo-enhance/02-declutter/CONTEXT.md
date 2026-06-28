@@ -8,7 +8,7 @@ Remove clutter, personal items, and messy backgrounds.
 
 ## Process (OpenAI)
 1. Process ALL photos:
-   - `cluttered` / `personal items` → OpenAI `generate_image` (GPT Image 1 edit mode) —
+   - `cluttered` / `personal items` → OpenAI `generate_image` (GPT Image 2 edit mode) —
      prompt: "remove clutter and personal items, clean professional look, same room structure".
    - `dim lighting` → OpenAI `generate_image` — prompt: "brighten, natural daylight, warm tone".
    - `bare room, needs staging` → pass through with `needs_staging: true`.

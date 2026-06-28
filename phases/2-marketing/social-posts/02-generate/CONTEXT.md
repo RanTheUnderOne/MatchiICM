@@ -8,7 +8,7 @@ Make post image(s) + caption per platform.
 
 ## Process (OpenAI + LLM)
 1. Per platform, build an image prompt from facts + brand style.
-2. Call OpenAI `generate_image` (GPT Image 1, 1024x1024).
+2. Call OpenAI `generate_image` (GPT Image 2, 1024x1024).
 3. LLM writes Hebrew caption (right length, hashtags, brand voice).
 4. Write `output/posts.json` — [{platform, image_prompt, image_path, caption, status}].
 
