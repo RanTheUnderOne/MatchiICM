@@ -44,9 +44,12 @@ Setup configures the factory, not the product.
 11. **שפת ברירת מחדל** (he / en / both)
     - Your answer: `{{DEFAULT_LANGUAGE}}`
 
+12. **OpenAI API key** — set as `$OPENAI_API_KEY` env var on Hermes server. Shared across all bots. Never stored in workspace.
+    - Your answer: `{{OPENAI_API_KEY}}`
+
 ## Tools
 
-12. **Apify API token** (לסריקת פייסבוק ו-Yad2)
+13. **Apify API token** (לסריקת פייסבוק ו-Yad2)
     - Your answer: `{{APIFY_TOKEN}}`
 
 ## Derived Fields

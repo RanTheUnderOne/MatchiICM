@@ -43,16 +43,16 @@ Decide by content, not exact keywords. Hebrew + English.
 | Intent | Workflow | Execution |
 |---|---|---|
 | CMA / ניתוח שוק / השוואת מחיר | `phases/1-exclusivity/cma/` | Script: `cma_analyze.py`. Data: MCP `search_real_estate_properties` |
-| פרופיל סוכן / כרטיס ביקור | `phases/1-exclusivity/agent-profile/` | MCP: Higgsfield `generate_image` (Soul ID) |
+| פרופיל סוכן / כרטיס ביקור | `phases/1-exclusivity/agent-profile/` | OpenAI: `generate_image` (DALL-E 3). Ref: `$OPENAI_API_KEY` |
 | יבוא מ-Yad2 / ייבא נכסים | `phases/1-exclusivity/yad2-import/` | MCP: Apify Yad2 scraper |
 
 ### Phase 2 - Marketing (שיווק)
 | Intent | Workflow | Execution |
 |---|---|---|
-| הסרת רהיטים / שיפור תמונה / staging | `phases/2-marketing/photo-enhance/` | MCP: Higgsfield `remove_background`, `generate_image` |
+| הסרת רהיטים / שיפור תמונה / staging | `phases/2-marketing/photo-enhance/` | OpenAI: `generate_image` (DALL-E 3 edit + inpaint) |
 | ברושור / עלון | `phases/2-marketing/brochure/` | Script: `mcp_brochure_run.py`. Data: MCP properties |
-| וידאו / סרטון נכס | `phases/2-marketing/video/` | MCP: Higgsfield `generate_video`, `motion_control` |
-| פוסט / רשתות חברתיות | `phases/2-marketing/social-posts/` | MCP: Higgsfield `generate_image` + `virality_predictor` |
+| וידאו / סרטון נכס | `phases/2-marketing/video/` | 🔴 Blocked — no OpenAI video. Script only |
+| פוסט / רשתות חברתיות | `phases/2-marketing/social-posts/` | OpenAI: `generate_image` + LLM virality estimate |
 | דף נכס / עמוד נכס | `phases/2-marketing/property-page/` | LLM: content assembly. Data: MCP properties |
 
 ### Phase 3 - Leads (לידים)
@@ -75,6 +75,6 @@ Decide by content, not exact keywords. Hebrew + English.
 | Phase | Workflows | Status |
 |---|---|---|
 | 1 - Exclusivity | cma, agent-profile, yad2-import | 🟢 Scripts + MCP wired. cma proven 9/10 cold-test. |
-| 2 - Marketing | photo-enhance, brochure, video, social-posts, property-page | 🟢 brochure: script wired. photo-enhance/video/social: Higgsfield MCP live. property-page: LLM. |
+| 2 - Marketing | photo-enhance, brochure, video, social-posts, property-page | 🟢 brochure: script wired. photo-enhance/social: OpenAI. video: 🔴 blocked. property-page: LLM. |
 | 3 - Leads | facebook-scan, lead-scoring, matching, crm-update | 🟢 All 4 scripts wired to MCP. Tested live. |
 | 4 - Closing | contract-sign, scheduling, reminders | 🟡 scheduling: Calendar MCP live. contract-sign + reminders: partial (mock fallback). |

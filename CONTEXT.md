@@ -7,16 +7,16 @@ Run only workflow a trigger points to.
 | Workflow | Produces | Engine |
 |---|---|---|
 | cma | Comparative Market Analysis (asking vs market) | Script `cma_analyze.py` + MCP properties |
-| agent-profile | Branded agent profile card + portrait | Higgsfield MCP (Soul ID + headshot) |
+| agent-profile | Branded agent profile card + portrait | OpenAI DALL-E 3 (`$OPENAI_API_KEY` env) |
 | yad2-import | Structured property list from Yad2 | Apify MCP (Yad2 scraper) |
 
 ## Phase 2 - Marketing
 | Workflow | Produces | Engine |
 |---|---|---|
-| photo-enhance | Staged/enhanced property images | Higgsfield MCP (remove_background + inpaint) |
+| photo-enhance | Staged/enhanced property images | OpenAI DALL-E 3 (edit + inpaint) |
 | brochure | Museum-quality PDF brochure HE/EN | Script `mcp_brochure_run.py` + Playwright |
-| video | Property video script + clips | Higgsfield MCP (generate_video + motion_control) |
-| social-posts | FB/IG post pack with virality scores | Higgsfield MCP (generate_image + virality_predictor) |
+| video | Property video script + clips | 🔴 Blocked — no video API. Script only |
+| social-posts | FB/IG post pack with virality scores | OpenAI DALL-E 3 + LLM virality estimate |
 | property-page | Public property page content + chat FAQ | LLM + MCP property data |
 
 ## Phase 3 - Leads

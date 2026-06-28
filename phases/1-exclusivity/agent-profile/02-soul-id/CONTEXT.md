@@ -1,29 +1,27 @@
-# Stage 02 - Soul ID (Consistent Character)
+# Stage 02 — Reference Images
 
-Train a persistent visual identity for the agent. This is what makes every
-future visual show the SAME face.
+Collect reference photos for consistent agent portraits. No training needed —
+OpenAI prompt consistency replaces Soul ID.
 
 ## Execution Layer
-MCP - Higgsfield Soul ID training via `show_characters(action:train)`.
+Human → OpenAI `generate_image` (DALL-E 3).
 
 ## Inputs
-- `01-intake/output/agent.json` (photo_refs)
+- `01-intake/output/agent.json` (photo_refs, name, brand)
 
 ## Process
-1. Validate photo_refs (10–20 well-lit, varied angles recommended).
-2. Upload photos to Higgsfield, call `show_characters(action:train)` to
-   train the Soul ID.
-3. Capture the returned `soul_id` from the training response.
-4. On success, write output with `soul_id`. On MCP failure, fall back to
-   LLM descriptor with `fallback: true`.
+1. Validate photo_refs (5-10 well-lit, varied angles recommended).
+2. Build a consistent face descriptor from reference photos — note key features:
+   face shape, hair color/style, eye color, skin tone, age range.
+3. Save descriptor to `output/` — stage 03 uses it as prompt prefix.
+4. No MCP call in this stage. Just extract + validate.
 
 ## Outputs
-- `output/soul-id.json` - {soul_id, photos_used, status, fallback}.
+- `output/face-descriptor.json` — {features: {...}, photos_used: N, status}.
 
 ## Human gate
-Show the trained identity preview. Confirm before generating portraits.
+Show the descriptor. Confirm before generating portraits.
 
 ## Pitfalls
-| < 10 photos | Weak identity lock - warn the agent |
-| Inconsistent photos (different people) | Soul ID degrades - use one person only |
-| MCP timeout / failure | Fall back to LLM descriptor; set fallback flag |
+| < 5 photos | Descriptor may be weak — warn agent |
+| Multiple people in photos | Flag ambiguity |

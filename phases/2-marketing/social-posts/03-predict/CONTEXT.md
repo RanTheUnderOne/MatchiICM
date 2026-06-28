@@ -1,14 +1,16 @@
-# Stage 03 - Predict
+# Stage 03 — Predict
 
-Score expected performance so the agent picks the best variant.
+Estimate post performance via LLM analysis. No external API needed.
 
 ## Inputs
 - `02-generate/output/posts.json`
 
-## Process (MCP)
-1. Per post, call Higgsfield MCP `virality_predictor` to score {hook, retention_risk, score}.
-2. Attach prediction results to each post.
-3. Write `output/scored-posts.json` - posts + prediction fields.
+## Process (LLM)
+1. Per post, LLM analyzes: hook strength, retention risk, emotional appeal,
+   platform fit, Hebrew quality, hashtag relevance.
+2. Score each dimension 1-10. Aggregate to 0-100 virality estimate.
+3. Attach prediction: {virality_score, strengths[], weaknesses[], recommendation}.
+4. Write `output/scored-posts.json` — posts + prediction fields.
 
 ## Outputs
 - `output/scored-posts.json`
@@ -17,4 +19,5 @@ Score expected performance so the agent picks the best variant.
 Show ranked posts. Agent picks which to publish.
 
 ## Pitfalls
-| MCP outage | Fallback to placeholder scores; flag as unscored |
+| LLM overconfidence | Scores are estimates — not measured. Flag as "LLM estimate" |
+| Missing platform context | Compare against platform-specific best practices |

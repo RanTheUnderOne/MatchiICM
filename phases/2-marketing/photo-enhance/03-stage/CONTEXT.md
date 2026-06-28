@@ -1,16 +1,21 @@
-# Stage 03 - Stage
+# Stage 03 — Stage
 
 Virtually furnish empty rooms in brand style.
 
 ## Inputs
-- `02-declutter/output/decluttered.json` (ALL photos incl. pass-throughs with needs_staging)
-- `_config/voice.md`
+- `02-declutter/output/decluttered.json` (ALL photos with needs_staging flags)
+- `_config/voice.md` (brand palette, mood)
 
-## Process (MCP)
-1. For photos with `needs_staging: true` → build a staging brief (furniture style, palette from `_config/voice.md`). Call Higgsfield MCP `generate_image` with a staging preset.
+## Process (OpenAI)
+1. For photos with `needs_staging: true`:
+   - Build prompt: "virtual home staging, [room_type], [style from voice.md],
+     realistic furniture, natural lighting, wide angle, professional real estate photo".
+   - Call OpenAI `generate_image` (DALL-E 3).
 2. For photos with `needs_staging: false` → copy through with status "pass-through".
-3. Empty rooms pass through with `needs_staging: true` flag - they are staged, not skipped.
-4. Write `output/staged.json` - [{photo_id, brief, out_path, illustrative:true, status}].
+3. Write `output/staged.json` — [{photo_id, brief, out_path, illustrative: true, status}].
+
+## Environment
+- `OPENAI_API_KEY` — injected by Hermes. Never stored in workspace.
 
 ## Outputs
 - `output/staged.json`
@@ -19,5 +24,5 @@ Virtually furnish empty rooms in brand style.
 Show staged rooms. Approve set.
 
 ## Pitfalls
-| Over-staging looks fake | Keep realistic scale; label illustrative |
-| MCP outage | Fallback to mock staging briefs in `_mock/` |
+| Over-staging looks fake | Keep description realistic; label illustrative |
+| API rate limit | DALL-E 3: 1 image/sec. Process sequentially |

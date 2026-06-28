@@ -1,29 +1,31 @@
-# Stage 03 - Portrait
+# Stage 03 — Portrait
 
-Generate the professional portrait(s) using the locked identity.
+Generate professional portrait(s) using consistent face descriptor.
 
 ## Execution Layer
-MCP - Higgsfield `generate_image` with soul_id.
+OpenAI — `https://api.openai.com/v1/images/generations` with `$OPENAI_API_KEY`.
 
 ## Inputs
-- `02-soul-id/output/soul-id.json` (soul_id)
-- `_config/voice.md` (brand: background, colors)
+- `02-soul-id/output/face-descriptor.json` (face consistency prompt)
+- `_config/voice.md` (brand: background, colors, mood)
 
 ## Process
-1. Build portrait generation parameters: professional real-estate headshot,
-   clean neutral or branded background, soft professional lighting, business
-   attire.
-2. Call Higgsfield `generate_image` with the `soul_id` + headshot preset.
-3. Save returned image(s) to `output/`. Set `fallback: true` if MCP
-   unavailable.
+1. Build prompt: `face-descriptor` + "professional real-estate headshot,
+   clean neutral background, soft professional lighting, business attire".
+2. Call OpenAI `generate_image` (DALL-E 3, 1024x1024, HD quality).
+3. Save returned image(s) to `output/`.
+4. On failure: fallback to placeholder, set `fallback: true`.
 
 ## Outputs
-- `output/portrait.json` - {soul_id, image_paths[], status, fallback}.
+- `output/portrait.json` — {image_paths[], prompt_used, status, fallback}.
+
+## Environment
+- `OPENAI_API_KEY` — injected by Hermes. Never stored in workspace.
 
 ## Human gate
 Show portrait(s). Agent picks/approves before the card is assembled.
 
 ## Pitfalls
-| Background clashes with brand | Use `_config/voice.md` colors |
-| Face drift | Always pass soul_id - never generate without it |
-| MCP timeout / failure | Fall back - stage 04 uses placeholder if no image |
+| Background clashes with brand | Use `_config/voice.md` palette in prompt |
+| Face drift between portraits | Always include full face-descriptor as prompt prefix |
+| API rate limit | DALL-E 3: 1 image/sec. Batch sequentially |
