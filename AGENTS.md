@@ -43,13 +43,13 @@ Decide by content, not exact keywords. Hebrew + English.
 | Intent | Workflow | Execution |
 |---|---|---|
 | CMA / ניתוח שוק / השוואת מחיר | `phases/1-exclusivity/cma/` | Script: `cma_analyze.py`. Data: MCP `search_real_estate_properties` |
-| פרופיל סוכן / כרטיס ביקור | `phases/1-exclusivity/agent-profile/` | OpenAI: `generate_image` (GPT Image 2). Ref: `$OPENAI_API_KEY` |
+| פרופיל סוכן / כרטיס ביקור | `phases/1-exclusivity/agent-profile/` | OpenAI: `generate_image` (gpt-image-2). Ref: `$OPENAI_API_KEY` |
 | יבוא מ-Yad2 / ייבא נכסים | `phases/1-exclusivity/yad2-import/` | MCP: Apify Yad2 scraper |
 
 ### Phase 2 - Marketing (שיווק)
 | Intent | Workflow | Execution |
 |---|---|---|
-| הסרת רהיטים / שיפור תמונה / staging | `phases/2-marketing/photo-enhance/` | OpenAI: `generate_image` (GPT Image 2 edit + inpaint) |
+| הסרת רהיטים / שיפור תמונה / staging | `phases/2-marketing/photo-enhance/` | OpenAI: `images.edit` (gpt-image-2, multipart) |
 | ברושור / עלון | `phases/2-marketing/brochure/` | Script: `mcp_brochure_run.py`. Data: MCP properties |
 | וידאו / סרטון נכס | `phases/2-marketing/video/` | 🔴 Blocked — no OpenAI video. Script only |
 | פוסט / רשתות חברתיות | `phases/2-marketing/social-posts/` | OpenAI: `generate_image` + LLM virality estimate |

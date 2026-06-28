@@ -52,13 +52,13 @@ MatchiICM/
 | Workflow | Data | Engine | Status |
 |---|---|---|---|
 | cma | MCP `search_real_estate_properties` | Script `cma_analyze.py` | 🟢 Proven 9/10 cold-test |
-| agent-profile | OpenAI GPT Image 2 | `generate_image` + face descriptor | 🟢 OpenAI (`$OPENAI_API_KEY` env) |
+| agent-profile | OpenAI gpt-image-2 | `generate_image` + face descriptor | 🟢 OpenAI (`$OPENAI_API_KEY` env) |
 | yad2-import | Apify MCP | Yad2 scraper → MCP `add_new_potential_property` | 🟢 Apify live |
 
 ### Phase 2 - Marketing 🟢
 | Workflow | Data | Engine | Status |
 |---|---|---|---|
-| photo-enhance | MCP `get_property_full_details` | OpenAI `generate_image` (GPT Image 2 edit + staging) | 🟢 |
+| photo-enhance | MCP `get_property_full_details` | OpenAI `images.edit` (gpt-image-2, multipart) | 🟢 |
 | brochure | MCP properties | Script `mcp_brochure_run.py` (Playwright PDF) | 🟢 Pipeline verified |
 | video | MCP properties | 🔴 Blocked — no video API. Script only | 🔴 |
 | social-posts | MCP properties | OpenAI `generate_image` + LLM virality estimate | 🟢 (publish 🔴 discover) |
@@ -84,7 +84,7 @@ MatchiICM/
 | Endpoint | Status | Tools |
 |---|---|---|
 | `https://prod-mcp.nadlanai.org/mcp` | 🟢 Live | search_real_estate_properties, get_property_full_details, list_leads, add_new_potential_property, get_lead_statistics_summary |
-| OpenAI (GPT Image 2) | `$OPENAI_API_KEY` env | `generate_image` (edit, inpaint, staging). Shared across all bots |
+| OpenAI (gpt-image-2) | `$OPENAI_API_KEY` env | `generate_image` + `images.edit` (declutter, staging). Shared across all bots |
 | Apify MCP | 🟢 Live | FB group scraper, Yad2 scraper |
 | Google Calendar MCP | 🟢 Live | list_events, create_event, update_event, suggest_time |
 

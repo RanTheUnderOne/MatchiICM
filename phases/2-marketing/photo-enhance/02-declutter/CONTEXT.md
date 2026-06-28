@@ -6,14 +6,20 @@ Remove clutter, personal items, and messy backgrounds.
 - `01-intake/output/photos.json`
 - `_config/voice.md` (brand mood)
 
-## Process (OpenAI)
+## Process (OpenAI `images.edit`)
+Endpoint: `POST https://api.openai.com/v1/images/edits` (multipart/form-data).
+Model: `gpt-image-2`. No mask — edit whole image.
+
 1. Process ALL photos:
-   - `cluttered` / `personal items` → OpenAI `generate_image` (GPT Image 2 edit mode) —
-     prompt: "remove clutter and personal items, clean professional look, same room structure".
-   - `dim lighting` → OpenAI `generate_image` — prompt: "brighten, natural daylight, warm tone".
+   - `cluttered` / `personal items` → upload image, prompt: "clean empty room,
+     remove all clutter and personal items, freshly painted walls,
+     same room structure and lighting, professional real estate photo".
+   - `dim lighting` → upload image, prompt: "same room, brighten,
+     natural daylight, warm professional tone".
    - `bare room, needs staging` → pass through with `needs_staging: true`.
    - `issues: []` (clean) → pass through with `needs_staging: false`.
-2. Write `output/decluttered.json` — [{photo_id, room, brief, out_path, needs_staging, status}].
+2. Save returned image as `output/{photo_id}-clean.png`.
+3. Write `output/decluttered.json` — [{photo_id, room, brief, out_path, needs_staging, status}].
    ALL photos appear here. Stage 03 reads this list.
 
 ## Environment
